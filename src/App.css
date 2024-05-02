@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+body{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-content{
+  height: 650px;
+  width: 100%;
+  background-color: cadetblue;
+  background-image: url("./asset/MovieAppHero.png");
+  position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-input{
+  width: 800px;
+  height: 60px;
+  border-radius: 15px;
+  font-size: 20px;
+  padding-left: 15px;
+  background-color:black;
+  color: white;
 }
+.search-bar{
+ left: 260px;
+  position: absolute;
+  top: 250px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+.image-container{
+  height: 250vh;
+  width: 100%;
+  background-color: black;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap; /* Add this line */
+}
+.image-container > div {
+  flex: 0 0 auto;
+}
+
+.image-container img {
+  transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.image-container img:hover {
+  transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.submit-button{
+  margin-left: 10px;
+}
+
+.poster-clicked .movie-container .movie-poster {
+  transform: scale(0.8); /* Example: Shrink the poster to 80% of its original size */
+}
+
+.movie-container.poster-clicked .movie-details {
+  bottom: 0;
+}
+
+.movie-container {
+  position: relative;
+  margin: 20px;
+}
+
+.movie-poster {
+  transition: transform 0.3s ease;
+}
+
+.movie-details {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: bottom 0.3s ease;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
